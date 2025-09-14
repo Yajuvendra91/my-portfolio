@@ -6,82 +6,55 @@
 <title>Yajuvendrasingh Chauhan | IMPACT over TENURE</title>
 
 <!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Times+New+Roman&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Times+New+Roman&display=swap" rel="stylesheet">
 
 <!-- Lightbox CSS -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
 
 <style>
-  /* ===== Global Styles ===== */
-body {
-  margin: 0;
-  padding: 0;
-  color: #333;
-  background: linear-gradient(135deg, #f0f4ff 0%, #e6f7ff 100%); /* 1️⃣ gradient background */
-  font-family: 'Inter', sans-serif;                              /* 5️⃣ new body font */
-}
-
-/* Headings keep Times New Roman for a classic feel */
-h1, h3 {
-  font-family: "Times New Roman", serif;
-  color: #0d47a1;               /* 3️⃣ navy heading color */
-}
-h2 {
-  margin: 10px 0;
-  color: #555;
-  font-weight: normal;
-}
-
-.tagline {
-  font-weight: bold;
-  font-size: 1.2em;
-  color: #009688;               /* 3️⃣ teal accent */
-  margin-top: 10px;
-}
-
-header {
-  padding: 60px 20px;
-  background: #fff;
-  border-radius: 16px;          /* 2️⃣ card style */
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  margin: 40px auto;
-  max-width: 900px;
-}
-
-/* Section cards */
-section {
-  background: #fff;
-  border-radius: 16px;          /* 2️⃣ rounded corners */
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  margin: 40px auto;
-  padding: 30px 20px;
-  max-width: 900px;
-  opacity: 0;                   /* 4️⃣ start hidden for fade-in */
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-section.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Other existing rules you had — gallery, counters, etc. — keep them */
-.counter-number {color:#009688;}
-a {color:#009688; text-decoration:none;}
-a:hover {text-decoration:underline;}
-button {padding:10px 20px; background:#009688; color:#fff; border:none; border-radius:5px; cursor:pointer;}
-button:hover {background:#00796b;}
-.headshot {
-  width:180px; height:180px; border-radius:50%; object-fit:cover;
-  margin-top:20px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.headshot:hover {transform: scale(1.05); box-shadow:0 8px 20px rgba(0,0,0,0.3);}
-.gallery-images img {transition: transform 0.3s; cursor:pointer;}
-.gallery-images img:hover {transform: scale(1.05);}
-@media(max-width:600px){
-  .gallery-images img {width:90%; height:auto;}
-}
+  body {
+    font-family: "Times New Roman", Times, serif;
+    margin:0; padding:0; background:#f9f9f9; color:#333; text-align:center;
+  }
+  header {
+    padding:60px 20px; background:#fff;
+  }
+  h1 {margin:0; font-size:2.5em;}
+  h2 {margin:10px 0; color:#555; font-weight: normal;}
+  .tagline {font-weight:bold; font-size:1.2em; color:#007acc; margin-top:10px;}
+  .headshot {
+    width:180px; height:180px; border-radius:50%; object-fit:cover; margin-top:20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .headshot:hover {transform: scale(1.05); box-shadow:0 8px 20px rgba(0,0,0,0.3);}
+  .bio, .achievements, .archives {max-width:900px; margin:40px auto; padding:0 20px; line-height:1.6; text-align:left;}
+  .linkedin-btn {
+    display:inline-block; margin-top:20px; padding:10px 20px;
+    background:#0077b5; color:#fff; border-radius:6px; text-decoration:none; font-weight:bold;
+    transition:0.3s;
+  }
+  .linkedin-btn:hover {background:#005983;}
+  .achievements h3, .archives h3 {margin-top:0; text-align:center;}
+  .achievements ul {padding-left:20px;}
+  .counters {display:flex; justify-content: space-around; margin-top:20px;}
+  .counter-box {text-align:center;}
+  .counter-number {font-size:2em; font-weight:bold; color:#007acc;}
+  .gallery-images {display:flex; flex-wrap:wrap; gap:15px; margin-top:20px; justify-content:center;}
+  .gallery-images img {width:280px; height:180px; object-fit:cover; border-radius:8px; box-shadow:0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s; cursor:pointer;}
+  .gallery-images img:hover {transform: scale(1.05);}
+  footer {text-align:center; padding:20px; background:#eee; margin-top:40px;}
+  a {color:#007acc; text-decoration:none;}
+  a:hover {text-decoration:underline;}
+  form {max-width:500px; margin:20px auto; text-align:left;}
+  input, textarea {width:100%; padding:10px; margin:5px 0 15px 0; border-radius:5px; border:1px solid #ccc;}
+  button {padding:10px 20px; background:#007acc; color:#fff; border:none; border-radius:5px; cursor:pointer;}
+  button:hover {background:#005983;}
+  @media(max-width:600px){
+    .counters {flex-direction:column; gap:20px;}
+    .gallery-images img {width:90%; height:auto;}
+  }
 </style>
 </head>
 <body>
@@ -159,13 +132,22 @@ button:hover {background:#00796b;}
 
 <!-- Counter Animation -->
 <script>
-  // 4️⃣ Intersection Observer to fade sections in as you scroll
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting) entry.target.classList.add('visible');
-    });
+  const counters = document.querySelectorAll('.counter-number');
+  counters.forEach(counter => {
+    const updateCount = () => {
+      const target = +counter.getAttribute('data-count');
+      const count = +counter.innerText;
+      const speed = 200; 
+      const increment = target / speed;
+      if(count < target){
+        counter.innerText = Math.ceil(count + increment);
+        setTimeout(updateCount, 20);
+      } else {
+        counter.innerText = target.toLocaleString();
+      }
+    };
+    updateCount();
   });
-  document.querySelectorAll('section, header').forEach(el => observer.observe(el));
 </script>
 
 </body>
