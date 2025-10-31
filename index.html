@@ -125,103 +125,44 @@ a {
 <body>
 
 <header>
-  <img src="headshot.jpg" alt="Yajuvendrasingh Chauhan" class="headshot">
-  <h1>Yajuvendrasingh Chauhan</h1>
-  <div class="tagline">IMPACT over TENURE</div>
-  <h2>Incubation • Startups • Funding • Project & Scheme Management</h2>
-  <a class="linkedin-btn" href="https://www.linkedin.com/in/yajuvendrachauhan" target="_blank">Connect on LinkedIn</a>
-</header>
-
-<section class="bio">
-  <p>
-    Yajuvendrasingh Chauhan is a dynamic incubation, program and startup ecosystem enabler for more than 10 years.
-    With a background in MBA Marketing and B.Sc. Mathematics, he specializes in mentoring startups,
-    securing strategic funding, and executing large-scale innovation programs. Recognized for
-    fostering collaborations, advancing CSR fundraising, and elevating institutional innovation rankings.
-  </p>
-</section>
-
-<section class="achievements">
-  <h3>Key Achievements</h3>
-  <div class="counters">
-    <div class="counter-box">
-      <div class="counter-number" data-count="50000000">0</div>
-      <div>Funding Mobilized (₹)</div>
+<section class="hero-split">
+  <!-- Left Side: Your Profile -->
+  <div class="profile-section">
+    <img src="headshot.jpg" alt="Yajuvendrasingh Chauhan" class="hero-headshot">
+    <div class="profile-text">
+      <h1>Yajuvendrasingh Chauhan</h1>
+      <div class="tagline">IMPACT over TENURE</div>
+      <h2>Incubation • Startups • Funding • Project & Scheme Management</h2>
+      <a class="linkedin-btn" href="https://www.linkedin.com/in/yajuvendrachauhan" target="_blank">
+        Connect on LinkedIn
+      </a>
     </div>
-    <div class="counter-box">
-      <div class="counter-number" data-count="10800000">0</div>
-      <div>IP & Prototype Support (₹)</div>
-    </div>
-    <div class="counter-box">
-      <div class="counter-number" data-count="30000000">0</div>
-      <div>Startup Funding (₹)</div>
-    </div>
-    <div class="counter-box">
-      <div class="counter-number" data-count="300">0</div>
-      <div>Projects Supported</div>
-    </div>
-  </div>
-    <ul>
-    <li>Twice contributed to Institution's Innovation Council (IIC), Ministry of Education (MoE), Government of India, guiding institutes to secure a 4-star rating out of 5.</li>
-    <li>SSIP Startup Scheme Coordinator – responsible for disbursing funds to early-stage innovators and mentoring them through funding readiness.</li>
-    <li>Coordinated UNICEF “For Every Child”–sponsored <strong>Young Innovator’s Program</strong>, a 6-month statewide initiative to scout, mentor, and support early-stage student innovators from ideation to funding readiness.</li>
-  </ul>
-
-</section>
-
-<section class="archives">
-  <h3>Archives</h3>
-  <div class="gallery-images">
-    <a href="event1.jpg" data-lightbox="archives" data-title="Archive 1"><img src="event1.jpg" alt="Archive 1"></a>
-    <a href="event2.JPG" data-lightbox="archives" data-title="Archive 2"><img src="event2.JPG" alt="Archive 2"></a>
-    <a href="event3.JPG" data-lightbox="archives" data-title="Archive 3"><img src="event3.JPG" alt="Archive 3"></a>
-  </div>
-</section>
-
-<section class="contact">
-  <h3>Contact / Connect</h3>
-  <p>
-    Let's talk about your requirement:
-    <a href="mailto:https://sites.google.com/view/ezillion-business/home">click here</a>.
-  </p>
-  <form action="https://formspree.io/f/xqadjgyo" method="POST">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="_replyto" placeholder="Your Email" required>
-    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-    <button type="submit">Send Message</button>
-  </form>
-</section>
-
-<section class="split-container">
-  <!-- Left: Portfolio -->
-  <div class="left-panel">
-    <h2>About Yajuvendrasingh Chauhan</h2>
-    <p>
-      Startup & MSME Consultant | Incubation Expert | Funding Strategist  
-      Helping founders structure, scale, and sustain innovation.
-    </p>
-    <img src="headshot.jpg" alt="Yajuvendrasingh Chauhan" class="side-headshot">
-    <a class="linkedin-btn" href="https://www.linkedin.com/in/yajuvendrachauhan" target="_blank">Connect on LinkedIn</a>
   </div>
 
   <!-- Divider -->
-  <div class="divider"></div>
+  <div class="hero-divider"></div>
 
-  <!-- Right: Startup Valuation Calculator -->
-  <div class="right-panel">
+  <!-- Right Side: Startup Valuation Calculator -->
+  <div class="calculator-section">
     <h2>Startup Valuation Calculator</h2>
-    <p>Enter your startup details below to estimate valuation:</p>
-
     <form id="valuationForm">
       <input type="text" name="startupName" placeholder="Startup Name" required>
       <input type="text" name="founderName" placeholder="Founder Name" required>
       <input type="text" name="city" placeholder="City" required>
       <input type="email" name="email" placeholder="Email" required>
 
-      <h4>Financial Inputs</h4>
+      <label for="stage">Stage</label>
+      <select id="stage" required>
+        <option value="0.5">Idea</option>
+        <option value="1.0">Prototype</option>
+        <option value="2.0">Early Traction</option>
+        <option value="4.0">Scaling</option>
+        <option value="6.0">Established</option>
+      </select>
+
+      <input type="number" id="clients" placeholder="Number of Clients" required>
       <input type="number" id="annualRevenue" placeholder="Annual Revenue (₹)" required>
-      <input type="number" id="growthRate" placeholder="Annual Growth Rate (%)" required>
-      <input type="number" id="industryMultiplier" placeholder="Industry Multiplier" required>
+      <input type="number" id="growthPercent" placeholder="Growth (%)" required>
 
       <button type="button" onclick="calculateValuation()">Calculate Valuation</button>
     </form>
@@ -233,61 +174,106 @@ a {
 <script>
 function calculateValuation() {
   const revenue = parseFloat(document.getElementById('annualRevenue').value) || 0;
-  const growth = parseFloat(document.getElementById('growthRate').value) / 100 || 0;
-  const multiplier = parseFloat(document.getElementById('industryMultiplier').value) || 1;
+  const growthPercent = parseFloat(document.getElementById('growthPercent').value) || 0;
+  const stageMultiplier = parseFloat(document.getElementById('stage').value) || 1;
 
-  const valuation = revenue * (1 + growth) * multiplier;
+  const growthFactor = 1 + (growthPercent / 100);
+  const valuation = revenue * growthFactor * stageMultiplier;
+
   document.getElementById('valuationResult').innerHTML = `
     <h3>Estimated Valuation:</h3>
-    <p style="font-size:1.5em; color:#009688; font-weight:bold;">₹ ${valuation.toLocaleString()}</p>
+    <p style="font-size:1.6em; color:#009688; font-weight:bold;">₹ ${valuation.toLocaleString()}</p>
+    <p><strong>Growth Factor:</strong> ${growthFactor.toFixed(2)}</p>
+    <p><strong>Stage Multiplier:</strong> ${stageMultiplier}</p>
   `;
 }
 </script>
 
 <style>
-.split-container {
+/* --- Hero Split Section --- */
+.hero-split {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  margin: 60px auto;
+  align-items: stretch;
   max-width: 1200px;
+  margin: 40px auto 60px;
   background: #fff;
   border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
   overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
 }
 
-.left-panel, .right-panel {
+.profile-section, .calculator-section {
   flex: 1;
   padding: 40px;
 }
 
-.divider {
+.hero-divider {
   width: 1px;
   background: linear-gradient(to bottom, transparent, #ccc, transparent);
 }
 
-.side-headshot {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  margin-top: 20px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+/* --- Left Side --- */
+.profile-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: #f9f9f9;
 }
+.hero-headshot {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.3s;
+}
+.hero-headshot:hover {
+  transform: scale(1.05);
+}
+.profile-text h1 {margin: 0; font-size: 2em;}
+.profile-text h2 {color: #555; font-weight: normal;}
+.tagline {color: #007acc; font-weight: bold; margin: 10px 0;}
 
-.right-panel form input {
-  width: 100%;
+/* --- Right Side --- */
+.calculator-section h2 {
+  color: #1a237e;
+  margin-bottom: 10px;
+}
+.calculator-section form {
+  display: flex;
+  flex-direction: column;
+}
+.calculator-section input,
+.calculator-section select {
   padding: 12px;
   margin: 8px 0;
   border: 1px solid #ccc;
   border-radius: 6px;
+  font-size: 1em;
 }
-
-.right-panel h4 {
-  margin-top: 20px;
-  color: #1a237e;
+.calculator-section label {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #333;
 }
-
+.calculator-section button {
+  margin-top: 15px;
+  padding: 12px;
+  background: #1a237e;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+}
+.calculator-section button:hover {
+  background: #151c61;
+  transform: scale(1.03);
+}
 #valuationResult {
   margin-top: 20px;
   background: #f1f8f6;
@@ -296,12 +282,16 @@ function calculateValuation() {
   text-align: center;
 }
 
+/* --- Responsive --- */
 @media (max-width: 900px) {
-  .split-container {
+  .hero-split {
     flex-direction: column;
   }
-  .divider {
+  .hero-divider {
     display: none;
+  }
+  .profile-section, .calculator-section {
+    padding: 30px;
   }
 }
 </style>
