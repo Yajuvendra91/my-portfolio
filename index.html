@@ -1,187 +1,387 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Startup Due Diligence | Yajuvendrasingh Chauhan</title>
-  <style>
-    body {
-      font-family: "Segoe UI", sans-serif;
-      background-color: #f4f6f9;
-      margin: 0;
-      padding: 0;
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Startup Tools | Yajuvendrasingh Chauhan</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@500&display=swap" rel="stylesheet">
+
+<style>
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #e3f2fd, #ede7f6);
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+
+  header {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(90deg, #1a237e, #3949ab);
+    color: white;
+  }
+
+  header h1 {
+    margin: 10px 0 5px;
+    font-size: 2.5em;
+  }
+
+  header .tagline {
+    font-size: 1.2em;
+    font-weight: 500;
+    color: #c5cae9;
+  }
+
+  /* TOOL SECTION */
+  .tools-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    padding: 40px 5%;
+  }
+
+  .tool-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    padding: 30px;
+    width: 420px;
+    transition: transform 0.3s ease;
+  }
+
+  .tool-card:hover {
+    transform: translateY(-6px);
+  }
+
+  .tool-card h2 {
+    color: #1a237e;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  form label {
+    display: block;
+    font-weight: 600;
+    margin-top: 10px;
+  }
+
+  form input, form select, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-family: inherit;
+  }
+
+  form button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(90deg, #1a237e, #3949ab);
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  form button:hover {
+    background: linear-gradient(90deg, #283593, #5c6bc0);
+    transform: scale(1.02);
+  }
+
+  #result, #dueResult {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.1em;
+    color: #00796b;
+  }
+
+  /* PROFILE SECTION */
+  .profile-section {
+    text-align: center;
+    padding: 40px 20px;
+    background: #fafafa;
+  }
+
+  .profile-section img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  }
+
+  .profile-section h2 {
+    margin-top: 20px;
+    color: #1a237e;
+  }
+
+  .profile-section p {
+    max-width: 700px;
+    margin: 10px auto;
+    font-size: 1em;
+    color: #444;
+  }
+
+  .linkedin-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 25px;
+    background: #0077b5;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.3s;
+  }
+
+  .linkedin-btn:hover {
+    background: #005b8a;
+  }
+
+  /* ACHIEVEMENTS */
+  .achievements {
+    padding: 50px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #ede7f6, #f3e5f5);
+  }
+
+  .counters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 30px;
+  }
+
+  .counter-box {
+    text-align: center;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    width: 200px;
+  }
+
+  .counter-number {
+    font-size: 2em;
+    font-weight: 700;
+    color: #3949ab;
+  }
+
+  footer {
+    background: #1a237e;
+    color: white;
+    text-align: center;
+    padding: 20px;
+  }
+
+  footer a {
+    color: #bbdefb;
+    text-decoration: none;
+  }
+
+  footer a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 900px) {
+    .tools-section {
+      flex-direction: column;
+      align-items: center;
     }
-    .container {
-      display: flex;
-      justify-content: space-around;
-      align-items: flex-start;
-      padding: 50px;
-      flex-wrap: wrap;
-    }
-    .profile {
-      flex: 1;
-      max-width: 400px;
-      text-align: center;
-    }
-    .profile img {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 15px;
-    }
-    .profile h1 {
-      font-size: 24px;
-      margin-bottom: 8px;
-    }
-    .profile p {
-      color: #666;
-      font-size: 14px;
-    }
-    .calculator {
-      flex: 1;
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      max-width: 450px;
-    }
-    h2 {
-      text-align: center;
-      color: #333;
-    }
-    label {
-      display: block;
-      margin-top: 12px;
-      font-weight: 600;
-    }
-    input, select, textarea {
-      width: 100%;
-      padding: 10px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-      margin-top: 5px;
-    }
-    button {
-      margin-top: 20px;
-      width: 100%;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      padding: 12px;
-      border-radius: 6px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #0056b3;
-    }
-    #result {
-      margin-top: 25px;
-      background: #e9f7ef;
-      border-left: 5px solid #28a745;
-      padding: 15px;
-      border-radius: 6px;
-      display: none;
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
 
-  <div class="container">
-    <!-- Profile -->
-    <div class="profile">
-      <img src="https://avatars.githubusercontent.com/u/yourphoto" alt="Yajuvendrasingh Chauhan" />
-      <h1>Yajuvendrasingh Chauhan</h1>
-      <p>Startup & MSME Consultant | Incubation Expert | Founder - EzillionHub</p>
-      <p><b>Key Achievements:</b><br>
-      🏢 Mentored 150+ Startups<br>
-      💰 Helped raise ₹5 Cr+ in early-stage funding<br>
-      🧠 Associated with 4+ leading incubators<br>
-      🌐 Founder of innovation platform - EzillionHub</p>
-    </div>
+<header>
+  <h1>Startup Tools Dashboard</h1>
+  <div class="tagline">Empowering Founders with Instant Insights</div>
+</header>
 
-    <!-- Due Diligence Calculator -->
-    <div class="calculator">
-      <h2>Startup Due Diligence Check</h2>
-      <form id="ddForm">
-        <label>Startup Name:</label>
-        <input type="text" id="startupName" required>
+<!-- TOOL SECTION -->
+<section class="tools-section">
 
-        <label>Founder Name:</label>
-        <input type="text" id="founderName" required>
+  <!-- Startup Valuation Calculator -->
+  <div class="tool-card">
+    <h2>Startup Valuation Calculator</h2>
+    <form id="valuationForm">
+      <label>Startup Name</label>
+      <input type="text" name="startup_name" required>
 
-        <label>Stage:</label>
-        <select id="stage" required>
-          <option value="Idea">Idea</option>
-          <option value="Prototype">Prototype</option>
-          <option value="Early Traction">Early Traction</option>
-          <option value="Scaling">Scaling</option>
-          <option value="Established">Established</option>
-        </select>
+      <label>Founder Name</label>
+      <input type="text" name="founder_name" required>
 
-        <label>Client Base (Number of Clients):</label>
-        <input type="number" id="clients" required>
+      <label>Email</label>
+      <input type="email" name="email" required>
 
-        <label>Annual Revenue (₹):</label>
-        <input type="number" id="revenue" required>
+      <label>City</label>
+      <input type="text" name="city" required>
 
-        <label>Growth Percentage (%):</label>
-        <input type="number" id="growth" required>
+      <label>Stage</label>
+      <select name="stage" required>
+        <option value="0.5">Idea</option>
+        <option value="1.0">Prototype</option>
+        <option value="2.0">Early Traction</option>
+        <option value="4.0">Scaling</option>
+        <option value="6.0">Established</option>
+      </select>
 
-        <button type="button" onclick="calculateDD()">Calculate</button>
-      </form>
+      <label>Annual Revenue (₹)</label>
+      <input type="number" name="revenue" required>
 
-      <div id="result"></div>
-    </div>
+      <label>Growth %</label>
+      <input type="number" name="growth" required>
+
+      <button type="submit">Calculate Valuation</button>
+    </form>
+    <div id="result"></div>
   </div>
 
-  <script>
-    const scriptURL = "https://script.google.com/macros/s/AKfycbwqRuvI5D_Df_XXSDJkBu36yxjBgdTRT6PJ0lNuClipcKQsHvEE_aWhbsjudXEWQ5_Zjg/exec";
+  <!-- Due Diligence Tool -->
+  <div class="tool-card">
+    <h2>Startup Due Diligence Check</h2>
+    <form id="dueForm">
+      <label>Startup Name</label>
+      <input type="text" name="startup_name" required>
 
-    function calculateDD() {
-      const name = document.getElementById("startupName").value;
-      const founder = document.getElementById("founderName").value;
-      const stage = document.getElementById("stage").value;
-      const clients = parseInt(document.getElementById("clients").value);
-      const revenue = parseFloat(document.getElementById("revenue").value);
-      const growth = parseFloat(document.getElementById("growth").value);
+      <label>Registration Type</label>
+      <select name="registration" required>
+        <option>Private Limited</option>
+        <option>LLP</option>
+        <option>OPC</option>
+        <option>Not Registered</option>
+      </select>
 
-      // Stage multipliers
-      const stageMultiplier = {
-        "Idea": 0.5,
-        "Prototype": 1.0,
-        "Early Traction": 2.0,
-        "Scaling": 4.0,
-        "Established": 6.0
-      };
+      <label>Annual Revenue (₹)</label>
+      <input type="number" name="annual_revenue" required>
 
-      const growthFactor = 1 + (growth / 100);
-      const ddScore = (clients * growthFactor * stageMultiplier[stage]) + (revenue / 100000);
+      <label>Funding Stage</label>
+      <select name="funding_stage" required>
+        <option>Bootstrapped</option>
+        <option>Angel</option>
+        <option>Seed</option>
+        <option>Venture Capital</option>
+      </select>
 
-      let status = "";
-      if (ddScore < 50) status = "High Risk";
-      else if (ddScore < 150) status = "Moderate Potential";
-      else status = "Promising Startup";
+      <label>Team Size</label>
+      <input type="number" name="team_size" required>
 
-      const resultDiv = document.getElementById("result");
-      resultDiv.style.display = "block";
-      resultDiv.innerHTML = `
-        <h3>Due Diligence Summary</h3>
-        <p><b>Startup:</b> ${name}</p>
-        <p><b>Founder:</b> ${founder}</p>
-        <p><b>Stage:</b> ${stage}</p>
-        <p><b>DD Score:</b> ${ddScore.toFixed(2)}</p>
-        <p><b>Status:</b> ${status}</p>
-      `;
+      <label>Product Description</label>
+      <textarea name="product_desc" rows="2" required></textarea>
 
-      // Save to Google Sheet
-      fetch(scriptURL, {
-        method: "POST",
-        body: new FormData(document.getElementById("ddForm")),
-      }).catch((err) => console.log("Error:", err));
+      <label>Any Legal Issues?</label>
+      <select name="legal_issues" required>
+        <option>No</option>
+        <option>Yes</option>
+      </select>
+
+      <button type="submit">Run Due Diligence</button>
+    </form>
+    <div id="dueResult"></div>
+  </div>
+</section>
+
+<!-- PROFILE -->
+<section class="profile-section">
+  <img src="headshot.jpg" alt="Yajuvendrasingh Chauhan">
+  <h2>Yajuvendrasingh Chauhan</h2>
+  <p>Startup & MSME Consultant | Incubation & Funding Strategist | Project Management Expert</p>
+  <a href="https://www.linkedin.com/in/yajuvendrachauhan" target="_blank" class="linkedin-btn">Connect on LinkedIn</a>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section class="achievements">
+  <h2>Key Achievements</h2>
+  <div class="counters">
+    <div class="counter-box">
+      <div class="counter-number" data-count="50000000">0</div>
+      <div>Funding Mobilized (₹)</div>
+    </div>
+    <div class="counter-box">
+      <div class="counter-number" data-count="10800000">0</div>
+      <div>IP & Prototype Support (₹)</div>
+    </div>
+    <div class="counter-box">
+      <div class="counter-number" data-count="30000000">0</div>
+      <div>Startup Funding (₹)</div>
+    </div>
+    <div class="counter-box">
+      <div class="counter-number" data-count="300">0</div>
+      <div>Projects Supported</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>📧 <a href="mailto:91.yajuvendra@gmail.com">91.yajuvendra@gmail.com</a> | 📍 Ahmedabad, Gujarat</p>
+  <p>© 2025 Yajuvendrasingh Chauhan</p>
+</footer>
+
+<!-- Scripts -->
+<script>
+  const scriptURL = "https://script.google.com/macros/s/AKfycbwqRuvI5D_Df_XXSDJkBu36yxjBgdTRT6PJ0lNuClipcKQsHvEE_aWhbsjudXEWQ5_Zjg/exec";
+
+  // Counter Animation
+  document.querySelectorAll('.counter-number').forEach(counter => {
+    const update = () => {
+      const target = +counter.getAttribute('data-count');
+      const count = +counter.innerText;
+      const inc = target / 100;
+      if(count < target) {
+        counter.innerText = Math.ceil(count + inc);
+        setTimeout(update, 25);
+      } else counter.innerText = target.toLocaleString();
+    };
+    update();
+  });
+
+  // Startup Valuation Calculator
+  document.getElementById('valuationForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const form = e.target;
+    const revenue = parseFloat(form.revenue.value);
+    const growth = parseFloat(form.growth.value);
+    const stage = parseFloat(form.stage.value);
+    const valuation = revenue * (1 + growth/100) * stage;
+
+    document.getElementById('result').innerText = `💰 Estimated Valuation: ₹${valuation.toLocaleString()}`;
+    const data = new FormData(form);
+    data.append("valuation", valuation);
+    fetch(scriptURL, { method: 'POST', body: data });
+  });
+
+  // Due Diligence Tool
+  document.getElementById('dueForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const form = e.target;
+    const data = new FormData(form);
+    const rev = parseFloat(form.annual_revenue.value);
+    const team = parseInt(form.team_size.value);
+    const legal = form.legal_issues.value;
+
+    let analysis = "";
+    if(legal === "Yes") {
+      analysis = "⚠️ High Risk: Legal issues present.";
+    } else if(rev > 5000000 && team >= 5) {
+      analysis = "✅ Low Risk: Strong revenue and team size.";
+    } else if(rev > 1000000) {
+      analysis = "🟡 Moderate Risk: Needs scaling support.";
+    } else {
+      analysis = "🔴 Early Stage: Build traction before funding.";
     }
-  </script>
+
+    document.getElementById('dueResult').innerText = analysis;
+    fetch(scriptURL, { method: 'POST', body: data });
+  });
+</script>
 
 </body>
 </html>
