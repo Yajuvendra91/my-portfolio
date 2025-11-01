@@ -1,268 +1,187 @@
-f<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Yajuvendrasingh Chauhan | IMPACT over TENURE</title>
-
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Times+New+Roman&display=swap" rel="stylesheet">
-
-<style>
-  body {
-    font-family: "Times New Roman", Times, serif;
-    margin:0; padding:0; background:#f9f9f9; color:#333;
-  }
-  header {
-    background:#fff;
-    padding:50px 5%;
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-start;
-    flex-wrap:wrap;
-    gap:40px;
-  }
-  .left-profile {
-    flex:1;
-    text-align:center;
-  }
-  h1 {margin:10px 0 0 0; font-size:2.3em;}
-  h2 {margin:10px 0; color:#555; font-weight: normal;}
-  .tagline {font-weight:bold; font-size:1.2em; color:#007acc; margin-top:10px;}
-  .headshot {
-    width:180px; height:180px; border-radius:50%; object-fit:cover; margin-top:10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-  .headshot:hover {transform: scale(1.05); box-shadow:0 8px 20px rgba(0,0,0,0.3);}
-  .linkedin-btn {
-    display:inline-block; margin-top:20px; padding:10px 20px;
-    background:#1a237e; color:#fff; border-radius:6px; text-decoration:none; font-weight:bold;
-    transition:transform 0.2s ease;
-  }
-  .linkedin-btn:hover {transform: scale(1.03); background:#151c61;}
-
-  /* Two Forms Container */
-  .tools {
-    display:flex;
-    flex-wrap:wrap;
-    gap:30px;
-    justify-content:space-between;
-    width:100%;
-  }
-  .tool-box {
-    flex:1;
-    background:#ffffff;
-    padding:25px;
-    border-radius:10px;
-    box-shadow:0 4px 12px rgba(0,0,0,0.1);
-    min-width:350px;
-  }
-  .tool-box h2 {text-align:center; color:#1a237e;}
-  form label {display:block; font-weight:bold; margin-top:10px;}
-  form input, form select, form textarea {
-    width:100%; padding:10px; margin-top:5px; border-radius:5px; border:1px solid #ccc;
-  }
-  form button {
-    margin-top:15px; padding:10px 20px;
-    background:#1a237e; color:#fff; border:none; border-radius:6px;
-    cursor:pointer; transition:transform 0.2s ease;
-  }
-  form button:hover {transform: scale(1.03); background:#151c61;}
-  #result {margin-top:20px; text-align:center; font-weight:bold; font-size:1.2em; color:#009688;}
-
-  section {max-width:900px; margin:40px auto; padding:0 20px; line-height:1.6;}
-  .achievements h3 {text-align:center;}
-  .counters {display:flex; justify-content: space-around; margin-top:20px; flex-wrap:wrap;}
-  .counter-box {text-align:center; flex:1; min-width:150px;}
-  .counter-number {font-size:2em; font-weight:bold; color:#009688;}
-  footer {text-align:center; padding:30px; background:#eee; margin-top:40px;}
-  a {color:#1a237e; text-decoration:none;}
-  a:hover {text-decoration:underline;}
-
-  @media(max-width:768px){
-    header {flex-direction:column; align-items:center;}
-    .tools {flex-direction:column;}
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Startup Due Diligence | Yajuvendrasingh Chauhan</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background-color: #f4f6f9;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-start;
+      padding: 50px;
+      flex-wrap: wrap;
+    }
+    .profile {
+      flex: 1;
+      max-width: 400px;
+      text-align: center;
+    }
+    .profile img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+    .profile h1 {
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+    .profile p {
+      color: #666;
+      font-size: 14px;
+    }
+    .calculator {
+      flex: 1;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      max-width: 450px;
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+    label {
+      display: block;
+      margin-top: 12px;
+      font-weight: 600;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      margin-top: 5px;
+    }
+    button {
+      margin-top: 20px;
+      width: 100%;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    #result {
+      margin-top: 25px;
+      background: #e9f7ef;
+      border-left: 5px solid #28a745;
+      padding: 15px;
+      border-radius: 6px;
+      display: none;
+    }
+  </style>
 </head>
 <body>
 
-<header>
-  <div class="left-profile">
-    <img src="headshot.jpg" alt="Yajuvendrasingh Chauhan" class="headshot">
-    <h1>Yajuvendrasingh Chauhan</h1>
-    <div class="tagline">IMPACT over TENURE</div>
-    <h2>Incubation • Startups • Funding • Project & Scheme Management</h2>
-    <a class="linkedin-btn" href="https://www.linkedin.com/in/yajuvendrachauhan" target="_blank">Connect on LinkedIn</a>
-  </div>
+  <div class="container">
+    <!-- Profile -->
+    <div class="profile">
+      <img src="https://avatars.githubusercontent.com/u/yourphoto" alt="Yajuvendrasingh Chauhan" />
+      <h1>Yajuvendrasingh Chauhan</h1>
+      <p>Startup & MSME Consultant | Incubation Expert | Founder - EzillionHub</p>
+      <p><b>Key Achievements:</b><br>
+      🏢 Mentored 150+ Startups<br>
+      💰 Helped raise ₹5 Cr+ in early-stage funding<br>
+      🧠 Associated with 4+ leading incubators<br>
+      🌐 Founder of innovation platform - EzillionHub</p>
+    </div>
 
-  <div class="tools">
-    <!-- Startup Valuation Calculator -->
-    <div class="tool-box">
-      <h2>Startup Valuation Calculator</h2>
-      <form id="valuationForm">
-        <label>Startup Name</label>
-        <input type="text" name="startup_name" required>
+    <!-- Due Diligence Calculator -->
+    <div class="calculator">
+      <h2>Startup Due Diligence Check</h2>
+      <form id="ddForm">
+        <label>Startup Name:</label>
+        <input type="text" id="startupName" required>
 
-        <label>Founder Name</label>
-        <input type="text" name="founder_name" required>
+        <label>Founder Name:</label>
+        <input type="text" id="founderName" required>
 
-        <label>Email</label>
-        <input type="email" name="email" required>
-
-        <label>City</label>
-        <input type="text" name="city" required>
-
-        <label>Stage</label>
-        <select name="stage" required>
-          <option value="0.5">Idea</option>
-          <option value="1.0">Prototype</option>
-          <option value="2.0">Early Traction</option>
-          <option value="4.0">Scaling</option>
-          <option value="6.0">Established</option>
+        <label>Stage:</label>
+        <select id="stage" required>
+          <option value="Idea">Idea</option>
+          <option value="Prototype">Prototype</option>
+          <option value="Early Traction">Early Traction</option>
+          <option value="Scaling">Scaling</option>
+          <option value="Established">Established</option>
         </select>
 
-        <label>Annual Revenue (₹)</label>
-        <input type="number" name="revenue" required>
+        <label>Client Base (Number of Clients):</label>
+        <input type="number" id="clients" required>
 
-        <label>Growth %</label>
-        <input type="number" name="growth" required>
+        <label>Annual Revenue (₹):</label>
+        <input type="number" id="revenue" required>
 
-        <button type="submit">Calculate & Save</button>
+        <label>Growth Percentage (%):</label>
+        <input type="number" id="growth" required>
+
+        <button type="button" onclick="calculateDD()">Calculate</button>
       </form>
+
       <div id="result"></div>
     </div>
-
-    <!-- Startup Due Diligence Check -->
-    <div class="tool-box">
-      <h2>Startup Due Diligence Check</h2>
-      <form id="dueForm">
-        <label>Startup Name</label>
-        <input type="text" name="startup_name" required>
-
-        <label>Registration Type</label>
-        <select name="registration" required>
-          <option>Private Limited</option>
-          <option>LLP</option>
-          <option>OPC</option>
-          <option>Not Registered</option>
-        </select>
-
-        <label>Annual Revenue (₹)</label>
-        <input type="number" name="annual_revenue" required>
-
-        <label>Funding Stage</label>
-        <select name="funding_stage" required>
-          <option>Bootstrapped</option>
-          <option>Angel</option>
-          <option>Seed</option>
-          <option>Venture Capital</option>
-        </select>
-
-        <label>Team Size</label>
-        <input type="number" name="team_size" required>
-
-        <label>Product Description</label>
-        <textarea name="product_desc" rows="3" required></textarea>
-
-        <label>Any Legal Issues?</label>
-        <select name="legal_issues" required>
-          <option>No</option>
-          <option>Yes</option>
-        </select>
-
-        <button type="submit">Submit & Save</button>
-      </form>
-      <div id="dueResult"></div>
-    </div>
   </div>
-</header>
 
-<section class="achievements">
-  <h3>Key Achievements</h3>
-  <div class="counters">
-    <div class="counter-box">
-      <div class="counter-number" data-count="50000000">0</div>
-      <div>Funding Mobilized (₹)</div>
-    </div>
-    <div class="counter-box">
-      <div class="counter-number" data-count="10800000">0</div>
-      <div>IP & Prototype Support (₹)</div>
-    </div>
-    <div class="counter-box">
-      <div class="counter-number" data-count="30000000">0</div>
-      <div>Startup Funding (₹)</div>
-    </div>
-    <div class="counter-box">
-      <div class="counter-number" data-count="300">0</div>
-      <div>Projects Supported</div>
-    </div>
-  </div>
-</section>
+  <script>
+    const scriptURL = "https://script.google.com/macros/s/AKfycbwqRuvI5D_Df_XXSDJkBu36yxjBgdTRT6PJ0lNuClipcKQsHvEE_aWhbsjudXEWQ5_Zjg/exec";
 
-<footer>
-  <p>📧 <a href="mailto:91.yajuvendra@gmail.com">91.yajuvendra@gmail.com</a> | 📍 Ahmedabad, Gujarat</p>
-  <p>© 2025 Yajuvendrasingh Chauhan | Ezillionhub.com</p>
-</footer>
+    function calculateDD() {
+      const name = document.getElementById("startupName").value;
+      const founder = document.getElementById("founderName").value;
+      const stage = document.getElementById("stage").value;
+      const clients = parseInt(document.getElementById("clients").value);
+      const revenue = parseFloat(document.getElementById("revenue").value);
+      const growth = parseFloat(document.getElementById("growth").value);
 
-<!-- Counter Animation -->
-<script>
-  const counters = document.querySelectorAll('.counter-number');
-  counters.forEach(counter => {
-    const updateCount = () => {
-      const target = +counter.getAttribute('data-count');
-      const count = +counter.innerText;
-      const speed = 200;
-      const increment = target / speed;
-      if(count < target){
-        counter.innerText = Math.ceil(count + increment);
-        setTimeout(updateCount, 20);
-      } else {
-        counter.innerText = target.toLocaleString();
-      }
-    };
-    updateCount();
-  });
+      // Stage multipliers
+      const stageMultiplier = {
+        "Idea": 0.5,
+        "Prototype": 1.0,
+        "Early Traction": 2.0,
+        "Scaling": 4.0,
+        "Established": 6.0
+      };
 
-  // ✅ Google Apps Script URL
-  const scriptURL = "https://script.google.com/macros/s/AKfycbx1zHkYSy09UmvoGY0FxkCBaXkSuaaftPDkhZsN1w5cT3xH4qahTS0R0T1hLz671Id1xA/exec";
+      const growthFactor = 1 + (growth / 100);
+      const ddScore = (clients * growthFactor * stageMultiplier[stage]) + (revenue / 100000);
 
-  // ✅ Valuation Calculator
-  document.getElementById('valuationForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const form = e.target;
-    const revenue = parseFloat(form.revenue.value);
-    const growth = parseFloat(form.growth.value);
-    const stageMultiplier = parseFloat(form.stage.value);
-    const growthFactor = 1 + (growth / 100);
-    const valuation = revenue * growthFactor * stageMultiplier;
-    document.getElementById('result').innerText = `Estimated Valuation: ₹${valuation.toLocaleString()}`;
-    const formData = new FormData(form);
-    formData.append("valuation", valuation);
-    fetch(scriptURL, { method: 'POST', body: formData })
-      .then(res => console.log('Valuation saved!', res))
-      .catch(err => console.error('Error!', err.message));
-  });
+      let status = "";
+      if (ddScore < 50) status = "High Risk";
+      else if (ddScore < 150) status = "Moderate Potential";
+      else status = "Promising Startup";
 
-  // ✅ Due Diligence Form
- // ✅ Due Diligence Form with instant reply
-document.getElementById('dueForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const formData = new FormData(e.target);
-  
-  fetch(scriptURL, { method: 'POST', body: formData })
-    .then(res => res.json())
-    .then(data => {
-      if (data.result === "success") {
-        document.getElementById('dueResult').innerText = "✅ Data saved successfully in Google Sheet!";
-      } else {
-        document.getElementById('dueResult').innerText = "⚠️ Something went wrong!";
-      }
-    })
-    .catch(err => document.getElementById('dueResult').innerText = "❌ Network error!");
-});
-</script>
+      const resultDiv = document.getElementById("result");
+      resultDiv.style.display = "block";
+      resultDiv.innerHTML = `
+        <h3>Due Diligence Summary</h3>
+        <p><b>Startup:</b> ${name}</p>
+        <p><b>Founder:</b> ${founder}</p>
+        <p><b>Stage:</b> ${stage}</p>
+        <p><b>DD Score:</b> ${ddScore.toFixed(2)}</p>
+        <p><b>Status:</b> ${status}</p>
+      `;
+
+      // Save to Google Sheet
+      fetch(scriptURL, {
+        method: "POST",
+        body: new FormData(document.getElementById("ddForm")),
+      }).catch((err) => console.log("Error:", err));
+    }
+  </script>
 
 </body>
 </html>
